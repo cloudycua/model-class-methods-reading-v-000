@@ -7,6 +7,8 @@ class Post < ActiveRecord::Base
   #author filter
   def self.by_author(author_id)
     where(author: author_id)
+    # replaces posts_controller#index
+    # Post.where(author: params[:author])
   end
 
   private
