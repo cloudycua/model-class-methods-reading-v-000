@@ -2,6 +2,7 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+  # provide a list of authors to the view for the filter control
     @authors = Author.all
   end
 
