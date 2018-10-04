@@ -1640,3 +1640,29 @@ ActionView::Template::Error (wrong number of arguments (given 1, expected 3..4))
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.3ms)
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (40.6ms)
+
+
+Started GET "/posts?utf8=%E2%9C%93&author=&commit=filter" for 24.228.153.119 at 2018-10-04 02:15:57 +0000
+Cannot render console from 24.228.153.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#index as HTML
+  Parameters: {"utf8"=>"✓", "author"=>"", "commit"=>"filter"}
+  [1m[35mAuthor Load (0.5ms)[0m  SELECT "authors".* FROM "authors"
+  Rendered posts/index.html.erb within layouts/application (6.1ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.5ms)
+
+ActionView::Template::Error (wrong number of arguments (given 1, expected 3..4)):
+    18:   <h3>Filter posts:</h3>
+    19:   <%= form_tag("/posts", method: "get") do %>
+    20:     <%= select_tag "author", options_from_collection_for_select(Author.all, "id", "name"), include_blank: true %>
+    21:     <%= select_tag "date", options_from_collection_for_select(["Today", "Old News"]), include_blank: true %>
+    22:     <%= submit_tag "filter" %>
+    23:   <% end %>
+    24: </div>
+  app/views/posts/index.html.erb:21:in `block in _app_views_posts_index_html_erb___576167186234833429_70124039830760'
+  app/views/posts/index.html.erb:19:in `_app_views_posts_index_html_erb___576167186234833429_70124039830760'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (12.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (43.0ms)
