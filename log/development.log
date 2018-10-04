@@ -1593,3 +1593,24 @@ Processing by PostsController#index as HTML
   Parameters: {"utf8"=>"✓", "author"=>"", "commit"=>"filter"}
   [1m[36mAuthor Load (0.6ms)[0m  [1mSELECT "authors".* FROM "authors"[0m
   [1m[35mPost Load (0.3ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (69.1ms)
+Completed 500 Internal Server Error in 82ms (ActiveRecord: 1.9ms)
+
+ActionView::Template::Error (undefined method `options_from_collection_fo_select' for #<#<Class:0x007f8e0d081900>:0x007f8e1de85708>
+Did you mean?  options_from_collection_for_select
+               option_groups_from_collection_for_select):
+     8:   <h3>Filter posts:</h3>
+     9:   <%= form_tag("/posts", method: "get") do %>
+    10:     <%= select_tag "author", options_from_collection_for_select(Author.all, "id", "name"), include_blank: true %>
+    11:     <%= select_tag "date", options_from_collection_fo_select(["Today", "Old News"]), include_blank: true %>
+    12:     <%= submit_tag "filter" %>
+    13:   <% end %>
+    14: </div>
+  app/views/posts/index.html.erb:11:in `block in _app_views_posts_index_html_erb___576167186234833429_70124181922320'
+  app/views/posts/index.html.erb:9:in `_app_views_posts_index_html_erb___576167186234833429_70124181922320'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.5ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (44.6ms)
