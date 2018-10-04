@@ -1320,3 +1320,81 @@ Cannot render console from 24.228.153.119! Allowed networks: 127.0.0.1, ::1, 127
 
 Started GET "/assets/authors.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 24.228.153.119 at 2018-10-04 01:31:32 +0000
 Cannot render console from 24.228.153.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/posts" for 24.228.153.119 at 2018-10-04 01:59:37 +0000
+Cannot render console from 24.228.153.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (1.1ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (65.3ms)
+Completed 500 Internal Server Error in 70ms (ActiveRecord: 1.1ms)
+
+ActionView::Template::Error (undefined local variable or method `author' for #<#<Class:0x0000000346a188>:0x007f8e1d3673a8>
+Did you mean?  author_url):
+    3: <div>
+    4:   <h3>Filter posts:</h3>
+    5:   <%= form_tag("/posts", method: "get") do %>
+    6:     <%= select_tag "author", options_from_collection_for_select(author.all, "id", "name"), include_blank: true %>
+    7:     <%= submit_tag "filter" %>
+    8:   <% end %>
+    9: </div>    
+  app/views/posts/index.html.erb:6:in `block in _app_views_posts_index_html_erb___576167186234833429_70124176089480'
+  app/views/posts/index.html.erb:5:in `_app_views_posts_index_html_erb___576167186234833429_70124176089480'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (34.6ms)
+
+
+Started GET "/" for 24.228.153.119 at 2018-10-04 01:59:44 +0000
+Cannot render console from 24.228.153.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#index as HTML
+  [1m[36mPost Load (0.3ms)[0m  [1mSELECT "posts".* FROM "posts"[0m
+  Rendered posts/index.html.erb within layouts/application (50.0ms)
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 0.3ms)
+
+ActionView::Template::Error (undefined local variable or method `author' for #<#<Class:0x0000000346a188>:0x007f8e0cc06880>
+Did you mean?  author_url):
+    3: <div>
+    4:   <h3>Filter posts:</h3>
+    5:   <%= form_tag("/posts", method: "get") do %>
+    6:     <%= select_tag "author", options_from_collection_for_select(author.all, "id", "name"), include_blank: true %>
+    7:     <%= submit_tag "filter" %>
+    8:   <% end %>
+    9: </div>    
+  app/views/posts/index.html.erb:6:in `block in _app_views_posts_index_html_erb___576167186234833429_70124176089480'
+  app/views/posts/index.html.erb:5:in `_app_views_posts_index_html_erb___576167186234833429_70124176089480'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (13.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (15.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (55.0ms)
+
+
+Started GET "/" for 24.228.153.119 at 2018-10-04 01:59:46 +0000
+Cannot render console from 24.228.153.119! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by PostsController#index as HTML
+  [1m[35mPost Load (0.2ms)[0m  SELECT "posts".* FROM "posts"
+  Rendered posts/index.html.erb within layouts/application (114.8ms)
+Completed 500 Internal Server Error in 118ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined local variable or method `author' for #<#<Class:0x0000000346a188>:0x007f8e0d1f1b78>
+Did you mean?  author_url):
+    3: <div>
+    4:   <h3>Filter posts:</h3>
+    5:   <%= form_tag("/posts", method: "get") do %>
+    6:     <%= select_tag "author", options_from_collection_for_select(author.all, "id", "name"), include_blank: true %>
+    7:     <%= submit_tag "filter" %>
+    8:   <% end %>
+    9: </div>    
+  app/views/posts/index.html.erb:6:in `block in _app_views_posts_index_html_erb___576167186234833429_70124176089480'
+  app/views/posts/index.html.erb:5:in `_app_views_posts_index_html_erb___576167186234833429_70124176089480'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.4ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (30.8ms)
