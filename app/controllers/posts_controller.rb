@@ -14,7 +14,11 @@ class PostsController < ApplicationController
     else
       @posts = Post.where("created_at <?", Time.zone.today.beginning_of_day)
     end
-  end
+  else
+    # if no filters are applied, show all posts
+    @posts = Post.all
+  end    
+  
 
   def show
     @post = Post.find(params[:id])
